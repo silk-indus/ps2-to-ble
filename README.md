@@ -1,4 +1,7 @@
 # ps2-to-ble
+
+## Turn your old PS2 keyboard to Bluetooth keyboard.
+
 ### This project is havily influenced by two libraries:
 
 1. FabGL by [Fabrizio Di Vittorio](https://github.com/fdivitto/fabgl), which brings to **ESP32** Display Controller (VGA, Color NTSC/PAL Composite, I2C and SPI displays), PS/2 Mouse and Keyboard Controller, Graphics Library, Sound Engine, Graphical User Interface (GUI), Game/Emulation Engine and ANSI/VT Terminal
