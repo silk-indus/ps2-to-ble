@@ -264,6 +264,7 @@ translate["VK_RALT"] = 0x86;
 translate["VK_RGUI"] = 0x87;
 translate["VK_SCROLLLOCK"] = 0xCF;
 translate["VK_NUMLOCK"] = 0xDB;
+translate["VK_APPLICATION"] = 0xED;
 
 translate["VK_UP"] = 0xDA;
 translate["VK_DOWN"] = 0xD9;
@@ -306,6 +307,12 @@ translate["VK_F22"] = 0xF9;
 translate["VK_F23"] = 0xFA;
 translate["VK_F24"] = 0xFB;
 
+translate["VK_KP_MINUS"] = 0xDE;
+translate["VK_KP_PLUS"] = 0xDF;
+translate["VK_KP_MULTIPLY"] = 0xDD;
+translate["VK_KP_DIVIDE"] = 0xDC;
+translate["VK_KP_ENTER"] = 0xE0;
+
 translate["VK_KP_0"] = 0xEA;
 translate["VK_KP_1"] = 0xE1;
 translate["VK_KP_2"] = 0xE2;
@@ -316,25 +323,19 @@ translate["VK_KP_6"] = 0xE6;
 translate["VK_KP_7"] = 0xE7;
 translate["VK_KP_8"] = 0xE8;
 translate["VK_KP_9"] = 0xE9;
-translate["VK_KP_SLASH"] = 0xDC;
-translate["VK_KP_ASTERISK"] = 0xDD;
-translate["VK_KP_MINUS"] = 0xDE;
-translate["VK_KP_PLUS"] = 0xDF;
-translate["VK_KP_ENTER"] = 0xE0;
 translate["VK_KP_PERIOD"] = 0xEB;
 
 translate["VK_KP_INSERT"] = 0xEA;
-translate["VK_KP_END"] = 0xD5;
-translate["VK_KP_DOWN"] = 0xD9;
-translate["VK_KP_PAGEDOWN"] = 0xD6;
+translate["VK_KP_END"] = 0xE1;
+translate["VK_KP_DOWN"] = 0xE2;
+translate["VK_KP_PAGEDOWN"] = 0xE3;
 translate["VK_KP_LEFT"] = 0xE4;
-translate["VK_KP_CENTER"] = 0xE6;
-translate["VK_KP_RIGHT"] = 0xD7;
-translate["VK_KP_HOME"] = 0xD2;
-translate["VK_KP_UP"] = 0xDA;
-translate["VK_KP_PAGEUP"] = 0xD3;
-translate["VK_KP_MULTIPLY"] = 0xDD;
-translate["VK_KP_DIVIDE"] = 0xC0;
+translate["VK_KP_CENTER"] = 0xE5;
+translate["VK_KP_RIGHT"] = 0xE6;
+translate["VK_KP_HOME"] = 0xE7;
+translate["VK_KP_UP"] = 0xE8;
+translate["VK_KP_PAGEUP"] = 0xE9;
+translate["VK_KP_DELETE"] = 0xEB;
 }
 
 bool BleKeyboard::isConnected(void) {

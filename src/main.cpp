@@ -123,16 +123,20 @@ void setup()
   PS2Controller.begin(PS2Preset::KeyboardPort0);
 
   printHelp();
+  bleKeyboard.press(bleKeyboard.translate["VK_LALT"]);
+  bleKeyboard.press(bleKeyboard.translate["VK_KP_6"]);
+  bleKeyboard.press(bleKeyboard.translate["VK_KP_4"]);
+  bleKeyboard.releaseAll();
   /*
-    for (int i = 150; i < 256; i++)
+    for (int i = 0; i < 256; i++)
     {
       while(digitalRead(0) != 0) {}
-      Serial.println(i);
+      Serial.printf("%2X\n",i);
       bleKeyboard.write(i);
       delay(500);
       while(digitalRead(0) == 1) {}
     }
-    */
+  */
 }
 
 void loop()
@@ -211,6 +215,7 @@ void loop()
     VirtualKeyItem item;
     if (keyboard->getNextVirtualKey(&item))
     {
+    /*
       xprintf("%s: ", keyboard->virtualKeyToString(item.vk));
       xprintf("\tASCII = 0x%02X\t", item.ASCII);
       if (item.ASCII >= ' ')
@@ -221,6 +226,7 @@ void loop()
         xprintf("%02X ", item.scancode[i]);
       xprintf("]");
       xprintf("\r\n");
+    */
 
       if (item.down)
       {
@@ -239,6 +245,7 @@ void loop()
           if (item.LALT)
             bleKeyboard.press(bleKeyboard.translate["VK_LALT"]);
 
+Serial.println(keyboard->virtualKeyToString(item.vk));
           bleKeyboard.write(bleKeyboard.translate[keyboard->virtualKeyToString(item.vk)]);
         }
       }
