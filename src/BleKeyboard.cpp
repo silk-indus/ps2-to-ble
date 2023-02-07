@@ -181,6 +181,79 @@ translate["VK_x"] = 0x78;
 translate["VK_y"] = 0x79;
 translate["VK_z"] = 0x7a;
 
+translate["VK_A"] = 0x61;
+translate["VK_B"] = 0x62;
+translate["VK_C"] = 0x63;
+translate["VK_D"] = 0x64;
+translate["VK_E"] = 0x65;
+translate["VK_F"] = 0x66;
+translate["VK_G"] = 0x67;
+translate["VK_H"] = 0x68;
+translate["VK_I"] = 0x69;
+translate["VK_J"] = 0x6a;
+translate["VK_K"] = 0x6b;
+translate["VK_L"] = 0x6c;
+translate["VK_M"] = 0x6d;
+translate["VK_N"] = 0x6e;
+translate["VK_O"] = 0x6f;
+translate["VK_P"] = 0x70;
+translate["VK_Q"] = 0x71;
+translate["VK_R"] = 0x72;
+translate["VK_S"] = 0x73;
+translate["VK_T"] = 0x74;
+translate["VK_U"] = 0x75;
+translate["VK_V"] = 0x76;
+translate["VK_W"] = 0x77;
+translate["VK_X"] = 0x78;
+translate["VK_Y"] = 0x79;
+translate["VK_Z"] = 0x7a;
+
+translate["VK_0"] = 0x30;
+translate["VK_1"] = 0x31;
+translate["VK_2"] = 0x32;
+translate["VK_3"] = 0x33;
+translate["VK_4"] = 0x34;
+translate["VK_5"] = 0x35;
+translate["VK_6"] = 0x36;
+translate["VK_7"] = 0x37;
+translate["VK_8"] = 0x38;
+translate["VK_9"] = 0x39;
+
+translate["VK_RIGHTPAREN"] = 0x29;
+translate["VK_EXCLAIM"] = 0x21;
+translate["VK_AT"] = 0x40;
+translate["VK_HASH"] = 0x23;
+translate["VK_DOLLAR"] = 0x24;
+translate["VK_PERCENT"] = 0x25;
+translate["VK_CARET"] = 0x5E;
+translate["VK_AMPERSAND"] = 0x26;
+translate["VK_KP_MULTIPLY"] = 0x2A;
+translate["VK_LEFTPAREN"] = 0x28;
+
+translate["VK_SPACE"] = 0x20;
+translate["VK_GRAVEACCENT"] = 0x60;
+translate["VK_TILDE"] = 0x7E;
+translate["VK_MINUS"] = 0x2D;
+translate["VK_UNDERSCORE"] = 0x5F;
+translate["VK_EQUALS"] = 0x3D;
+translate["VK_PLUS"] = 0x2B;
+translate["VK_BACKSLASH"] = 0x5C;
+translate["VK_VERTICALBAR"] = 0x7C;
+translate["VK_LEFTBRACKET"] = 0x5B;
+translate["VK_LEFTBRACE"] = 0x7B;
+translate["VK_RIGHTBRACKET"] = 0x5D;
+translate["VK_RIGHTBRACE"] = 0x7D;
+translate["VK_SEMICOLON"] = 0x3B;
+translate["VK_COLON"] = 0x3A;
+translate["VK_QUOTE"] = 0x27;
+translate["VK_QUOTEDBL"] = 0x22;
+translate["VK_COMMA"] = 0x2C;
+translate["VK_LESS"] = 0x3C;
+translate["VK_PERIOD"] = 0x2E;
+translate["VK_GREATER"] = 0x3E;
+translate["VK_SLASH"] = 0x2F;
+translate["VK_QUESTION"] = 0x3F;
+
 translate["VK_LCTRL"] = 0x80;
 translate["VK_LSHIFT"] = 0x81;
 translate["VK_LALT"] = 0x82;
@@ -189,15 +262,8 @@ translate["VK_RCTRL"] = 0x84;
 translate["VK_RSHIFT"] = 0x85;
 translate["VK_RALT"] = 0x86;
 translate["VK_RGUI"] = 0x87;
-
-translate["VK_KP_UP"] = 0xDA;
-translate["VK_KP_DOWN"] = 0xD9;
-translate["VK_KP_LEFT"] = 0x25;
-translate["VK_KP_RIGHT"] = 0xD7;
-translate["VK_KP_PAGEUP"] = 0xD3;
-translate["VK_KP_PAGEDOWN"] = 0xD6;
-translate["VK_KP_HOME"] = 0xD2;
-translate["VK_KP_END"] = 0xD5;
+translate["VK_SCROLLLOCK"] = 0xCF;
+translate["VK_NUMLOCK"] = 0xDB;
 
 translate["VK_UP"] = 0xDA;
 translate["VK_DOWN"] = 0xD9;
@@ -256,6 +322,19 @@ translate["VK_KP_MINUS"] = 0xDE;
 translate["VK_KP_PLUS"] = 0xDF;
 translate["VK_KP_ENTER"] = 0xE0;
 translate["VK_KP_PERIOD"] = 0xEB;
+
+translate["VK_KP_INSERT"] = 0xEA;
+translate["VK_KP_END"] = 0xD5;
+translate["VK_KP_DOWN"] = 0xD9;
+translate["VK_KP_PAGEDOWN"] = 0xD6;
+translate["VK_KP_LEFT"] = 0xE4;
+translate["VK_KP_CENTER"] = 0xE6;
+translate["VK_KP_RIGHT"] = 0xD7;
+translate["VK_KP_HOME"] = 0xD2;
+translate["VK_KP_UP"] = 0xDA;
+translate["VK_KP_PAGEUP"] = 0xD3;
+translate["VK_KP_MULTIPLY"] = 0xDD;
+translate["VK_KP_DIVIDE"] = 0xC0;
 }
 
 bool BleKeyboard::isConnected(void) {
