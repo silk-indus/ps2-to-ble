@@ -121,19 +121,22 @@ void setup()
   Terminal.enableCursor(true);
 
   PS2Controller.begin(PS2Preset::KeyboardPort0);
+  PS2Controller.keyboard()->setLEDs(1, 0, 0);
+  //VirtualKeyItem nmlck;
+  //nmlck.vk = (VirtualKey)140;
+  //PS2Controller.keyboard()->injectVirtualKey(nmlck, true);
+  //PS2Controller.keyboard()->updateLEDs();
+  //PS2Controller.keyboard()->setLEDs(true, false, false);
 
   printHelp();
-  bleKeyboard.press(bleKeyboard.translate["VK_LALT"]);
-  bleKeyboard.press(bleKeyboard.translate["VK_KP_6"]);
-  bleKeyboard.press(bleKeyboard.translate["VK_KP_4"]);
-  bleKeyboard.releaseAll();
+
   /*
     for (int i = 0; i < 256; i++)
     {
       while(digitalRead(0) != 0) {}
       Serial.printf("%2X\n",i);
       bleKeyboard.write(i);
-      delay(500);
+      delay(300);
       while(digitalRead(0) == 1) {}
     }
   */
@@ -215,28 +218,32 @@ void loop()
     VirtualKeyItem item;
     if (keyboard->getNextVirtualKey(&item))
     {
-    /*
-      xprintf("%s: ", keyboard->virtualKeyToString(item.vk));
-      xprintf("\tASCII = 0x%02X\t", item.ASCII);
-      if (item.ASCII >= ' ')
-        xprintf("'%c'", item.ASCII);
-      xprintf("\t%s", item.down ? "DN" : "UP");
-      xprintf("\t[");
-      for (int i = 0; i < 8 && item.scancode[i] != 0; ++i)
-        xprintf("%02X ", item.scancode[i]);
-      xprintf("]");
-      xprintf("\r\n");
-    */
+      /*
+        xprintf("%s: ", keyboard->virtualKeyToString(item.vk));
+        xprintf("\tASCII = 0x%02X\t", item.ASCII);
+        if (item.ASCII >= ' ')
+          xprintf("'%c'", item.ASCII);
+        xprintf("\t%s", item.down ? "DN" : "UP");
+        xprintf("\t[");
+        for (int i = 0; i < 8 && item.scancode[i] != 0; ++i)
+          xprintf("%02X ", item.scancode[i]);
+        xprintf("]");
+        xprintf("\r\n");
+      */
 
       if (item.down)
       {
+        Serial.printf("down (%s %d %d %d)\n", keyboard->virtualKeyToString(item.vk), item.SHIFT, item.CTRL, item.LALT);
         if (item.vk == 117 && !item.SHIFT)
           bleKeyboard.press(bleKeyboard.translate["VK_LSHIFT"]);
         if (item.vk == 121 && !item.CTRL)
           bleKeyboard.press(bleKeyboard.translate["VK_LCTRL"]);
         if (item.vk == 119 && !item.LALT)
           bleKeyboard.press(bleKeyboard.translate["VK_LALT"]);
-        if (!(item.vk >= 117 && item.vk <= 124))
+
+        if (item.vk != 117 &&
+            item.vk != 121 &&
+            item.vk != 119)
         {
           if (item.SHIFT)
             bleKeyboard.press(bleKeyboard.translate["VK_LSHIFT"]);
@@ -245,12 +252,12 @@ void loop()
           if (item.LALT)
             bleKeyboard.press(bleKeyboard.translate["VK_LALT"]);
 
-Serial.println(keyboard->virtualKeyToString(item.vk));
           bleKeyboard.write(bleKeyboard.translate[keyboard->virtualKeyToString(item.vk)]);
         }
       }
-      else
+      else // key up
       {
+        Serial.printf("up %s\n", keyboard->virtualKeyToString(item.vk));
         if (item.vk == 117)
           bleKeyboard.release(bleKeyboard.translate["VK_LSHIFT"]);
         if (item.vk == 121)
